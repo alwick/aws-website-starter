@@ -36,8 +36,9 @@ export class CdkStack extends cdk.Stack {
       // Create CloudFront distribution with S3 origin using OAI
       const response = new Distribution(this, 'MyDistribution', {
         defaultBehavior: {
-          origin: S3BucketOrigin.withOriginAccessControl(bucket)
-        }
+          origin: S3BucketOrigin.withOriginAccessControl(bucket),
+        },
+        defaultRootObject: 'index.html'
       });
       console.log(
         "CloudFront Distribution created:",
