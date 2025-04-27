@@ -27,9 +27,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Compile upload script
-        run: npx tsc ./src/upload-directory-to-s3.ts
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
