@@ -27,9 +27,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Compile upload script
-        run: npx tsc upload-directory-to-s3.ts
-
       - name: Upload ./dist to S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
